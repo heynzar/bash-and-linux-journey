@@ -1,0 +1,23 @@
+--Basic Commands--------------------------------------
+01- pwd: Print Working Directory
+02- cd: Change Directory
+03- ls: List Directory Contents 
+    ls -l: Detailed listing.
+    ls -a: Includes hidden files.
+    ls -lh: Human-readable sizes.
+04- mkdir: Make Directory.
+   mkdir -p p/c/d:Create nested directories.
+-------------------------------------------------------
+
+--Viewing and Manipulating Files-----------------------
+05- cat file.txt: Display File Content.
+06- less: View Large Files.
+07- touch: Create Empty Files.
+08- cp: Copy Files and Directories (copy).
+    cp file_1 file_2: Copy content file_1 to file_2.
+    cp -r dir_1 dir_2: Copy a directory recursively.
+09- mv: Rename or Move Files (cut).
+10- rm: Remove Files and Directories.
+    rm -r dir_1: Delete the directory.
+    rm -rf dir_1:  Force delete the directory.
+-------------------------------------------------------
