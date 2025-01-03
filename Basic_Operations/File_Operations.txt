@@ -21,3 +21,16 @@
     rm -r dir_1: Delete the directory.
     rm -rf dir_1:  Force delete the directory.
 -------------------------------------------------------
+
+--Searching for/in Files-------------------------------
+11- find:  Search for Files and Directories
+    find /path/ -name "what you're looking for". 
+    find -type f/d/l: Find all files/directories/links. 
+    find -size +-10M/k/..: Find files of a specific size.
+    find -mtime +-n: Find files modified in a n time.
+    find -atime +-n: Find files accessed in a n time.
+    find -ctime +-n: Find files changed in a n time.
+    find -group group_1: Find files belonging to a specific group.
+    find -exec ... {} \;: Execute a command on each found file.
+    find -delete: Delete each found file.
+    find -print: Print the full path of each found file.
