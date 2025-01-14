@@ -85,3 +85,55 @@ echo "Hello, $user_name!"
 read -p "Enter your age: " user_age
 echo "You are $user_age years old"
 ```
+
+### Read with a timeout
+
+```bash
+#!/bin/bash
+
+# Wait for 5 seconds for input
+read -t 5 -p "Quick! Enter a number: " number
+echo "You entered: $number"
+```
+
+## Command Substitution
+
+Store command output in variables:
+
+```bash
+#!/bin/bash
+
+current_time=$(date +%H:%M)
+files_count=$(ls | wc -l)
+
+echo "The time is: $current_time"
+echo "Number of files in directory: $files_count"
+```
+
+## Practical Example: User Information Script
+
+```bash
+#!/bin/bash
+
+# Get user information and display it
+
+# Using read with prompts
+read -p "Enter your name: " name
+read -p "Enter your age: " age
+read -p "Enter your city: " city
+
+# Get current date using command substitution
+current_date=$(date +%Y-%m-%d)
+
+# Display all information
+echo "
+=== User Information ===
+Date: $current_date
+Name: $name
+Age: $age
+City: $city
+Current Shell: $SHELL
+Home Directory: $HOME
+==================
+"
+```
