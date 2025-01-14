@@ -137,3 +137,80 @@ Home Directory: $HOME
 ==================
 "
 ```
+
+## Practice Exercises
+
+1. Create a simple calculator:
+
+```bash
+#!/bin/bash
+
+read -p "Enter first number: " num1
+read -p "Enter second number: " num2
+
+sum=$((num1 + num2))
+echo "The sum is: $sum"
+```
+
+2. Create a script that asks for a filename and creates it:
+
+```bash
+#!/bin/bash
+
+read -p "Enter filename: " filename
+touch "$filename"
+echo "File '$filename' has been created"
+ls -l "$filename"
+```
+
+## Important Tips
+
+1. **Always quote your variables** when using them:
+
+```bash
+file_name="my file.txt"
+# Correct:
+echo "$file_name"
+# Wrong:
+echo $file_name    # Will break with spaces
+```
+
+2. **Use meaningful variable names**:
+
+```bash
+# Good
+user_age=25
+temperature_celsius=30
+
+# Bad
+a=25
+temp=30
+```
+
+3. **Default Values**
+   You can provide default values for variables:
+
+```bash
+#!/bin/bash
+
+# Use default value if variable is unset
+name=${user_name:-"Guest"}
+echo "Hello, $name!"
+```
+
+## Exercise to Try
+
+Create a script that:
+
+- Asks for your name and favorite color
+- Gets the current time using command substitution
+- Creates a personalized message using all this information
+- Has default values if no input is provided
+
+Remember:
+
+- Variables are case-sensitive
+- No spaces around = in assignments
+- Use quotes around variables when using them
+- Use meaningful variable names
+- Test your scripts with different inputs
