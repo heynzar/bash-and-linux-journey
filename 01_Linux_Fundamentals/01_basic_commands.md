@@ -62,9 +62,11 @@ $ ls -d */           # List only directories
 $ mkdir new_directory
 
 # Common Options
-$ mkdir -p a/b/c     # Create parent directories as needed
+$ mkdir -p a/b/c     # Create a folder inside a folder
 $ mkdir -m 755 dir   # Create with specific permissions
 $ mkdir -v dir       # Verbose output
+
+# -v: Stands for verbose. When this option is used, mkdir prints a message indicating that the directory has been created successfully.
 
 # Practical Examples
 $ mkdir -p project/{src,docs,tests}     # Create multiple nested directories
@@ -161,8 +163,6 @@ $ head -n 5 file.txt              # Show first 5 lines
 # Common Options
 -n        # Number of lines to show
 -c        # Number of bytes to show
--q        # Quiet mode (no headers)
--v        # Verbose mode (always show headers)
 
 # Practical Examples
 $ head -n 20 *.log                # Show first 20 lines of all log files
@@ -219,8 +219,10 @@ $ cp source.txt destination.txt
 $ cp -r source_dir destination_dir
 
 # Common Options
--i        # Interactive (prompt before overwrite)
--u        # Update (copy only when source is newer)
+-i        # Interactive, If a file already exists at the destination, cp -i will ask you if you want to overwrite it.
+
+-u        # Only copies the source file if it is newer than the destination file or if the destination file does not exist,
+
 -v        # Verbose output
 -p        # Preserve attributes
 -l        # Create hard links

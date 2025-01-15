@@ -31,9 +31,9 @@ Let's break down what you see:
 -rw-r--r--
 
  -: File type (- for file, d for directory)
- rw-: Others' permissions (r--)
+ rw-: Owner's permissions (rw-)
  r--: Group's permissions (r--)
- r--: Owner's permissions (rw-)
+ r--: Others' permissions (r--)
 ```
 
 ## Essential Permission Commands
@@ -90,6 +90,104 @@ Changes the group of files and directories.
 chgrp developers file.txt        # Change group
 chgrp -R developers project/     # Change group recursively
 ```
+
+### 4. umask (User Mask)
+
+Controls the default permission settings for newly created files and directories.
+
+```bash
+# View current umask
+$ umask              # Shows current mask value
+$ umask -S           # Shows symbolic notation
+
+# Common umask values:
+022    # Default (files: 644, directories: 755)
+027    # More restrictive (files: 640, directories: 750)
+077    # Most restrictive (files: 600, directories: 700)
+
+# Setting umask
+umask 022           # Set umask numerically
+umask u=rwx,g=rx,o=rx  # Set umask symbolically
+
+# Understanding umask calculation:
+# Files start at 666 (rw-rw-rw-)
+# Directories start at 777 (rwxrwxrwx)
+# umask is subtracted from these values
+```
+
+### 5. getfacl (Get File Access Control Lists)
+
+Displays the Access Control Lists (ACLs) of files and directories.
+
+```bash
+# Basic usage
+getfacl file.txt              # Display ACLs for a file
+getfacl -R directory/         # Recursive display of directory ACLs
+
+# Common options
+-a         # Display the ACL only
+-d         # Display default ACLs for directories
+-R         # Recursive
+-p         # Show permission bits as numbers
+
+# Example output:
+# file: file.txt
+# owner: john
+# group: users
+# user::rw-
+# group::r--
+# other::r--
+```
+
+### 6. setfacl (Set File Access Control Lists)
+
+Modifies the Access Control Lists (ACLs) of files and directories.
+
+```bash
+# Basic usage
+setfacl -m u:user:permissions file    # Modify ACL for user
+setfacl -m g:group:permissions file   # Modify ACL for group
+
+# Common options
+-m         # Modify ACL
+-x         # Remove ACL entries
+-b         # Remove all ACL entries
+-R         # Recursive
+-d         # Set default ACL for directory
+
+# Common examples
+# Add specific user permission
+setfacl -m u:john:rx file.txt        # Give john read/execute
+
+# Add specific group permission
+setfacl -m g:developers:rw file.txt  # Give developers read/write
+
+# Set default ACLs for new files in directory
+setfacl -d -m u:john:rx directory/
+
+# Remove specific ACL
+setfacl -x u:john file.txt           # Remove john's specific ACL
+
+# Remove all ACLs
+setfacl -b file.txt                  # Remove all ACLs
+```
+
+## Extended Best Practices 🌟
+
+4. **Using ACLs Effectively**
+
+   - Use ACLs when standard permissions aren't granular enough
+   - Remember ACLs add complexity to permission management
+   - Document ACL changes for system administration
+   - Regularly audit ACLs with getfacl
+
+5. **Default Permission Management**
+   - Set appropriate umask in ~/.bashrc or /etc/profile
+   - Consider different umask values for different user types
+   - Use default ACLs for directories that need consistent permissions
+   - Document your umask policy in system documentation
+
+[Previous troubleshooting section remains and continues...]
 
 ## Common Examples and Use Cases
 
@@ -179,3 +277,45 @@ rwxrwxr-x    775     Shared directories for group collaboration
    ```
 
 Remember: With great power comes great responsibility! Always be careful when changing permissions, especially with system files or when using sudo.
+
+## Advanced Permission Examples
+
+### Using ACLs for Fine-grained Access Control
+
+```bash
+# Give specific user access while maintaining base permissions
+setfacl -m u:alice:rx project_file
+getfacl project_file
+
+# Set default ACLs for new files in a directory
+setfacl -d -m g:developers:rwx project_dir/
+```
+
+### Setting Up Collaborative Directory with ACLs
+
+```bash
+# Create project directory
+mkdir /shared/project
+chmod 770 /shared/project
+
+# Set base ACLs
+setfacl -m g:developers:rwx /shared/project
+setfacl -m g:interns:rx /shared/project
+
+# Set default ACLs for new files
+setfacl -d -m g:developers:rwx /shared/project
+setfacl -d -m g:interns:rx /shared/project
+```
+
+### Managing Default Permissions with umask
+
+```bash
+# For secure development environment
+umask 027  # New files: 640, directories: 750
+
+# For private work
+umask 077  # New files: 600, directories: 700
+
+# Add to ~/.bashrc for persistence
+echo "umask 027" >> ~/.bashrc
+```
