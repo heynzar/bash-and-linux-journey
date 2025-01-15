@@ -138,6 +138,146 @@ jobs
 fg %1              # %1 is job number from jobs command
 ```
 
+### 4. crontab (Scheduled Process Management)
+
+Manages scheduled tasks (cron jobs) that run automatically at specified times.
+
+```bash
+# Basic Usage
+crontab -l          # List current user's cron jobs
+crontab -e          # Edit cron jobs
+crontab -r          # Remove all cron jobs
+
+# Common Options
+-u username         # Manage another user's crontab (requires sudo)
+-i                  # Prompt before deleting all jobs
+```
+
+#### Crontab Time Format
+
+```bash
+# Format:
+# Minute Hour Day Month DayOfWeek Command
+# (0-59) (0-23) (1-31) (1-12) (0-6, 0=Sunday)
+
+# Special Characters
+*        # Any value
+,        # Value list separator
+-        # Range of values
+/        # Step values
+```
+
+#### Common Examples
+
+```bash
+# Format examples
+30 2 * * *        # Every day at 2:30 AM
+0 */4 * * *       # Every 4 hours
+*/15 * * * *      # Every 15 minutes
+0 0 * * 0         # Every Sunday at midnight
+0 0 1 * *         # First of every month
+
+# Real usage examples
+# Backup home directory daily at 1 AM
+0 1 * * * tar -czf /backup/home_$(date +\%Y\%m\%d).tar.gz /home/
+
+# Clear temp files weekly
+0 0 * * 0 rm -rf /tmp/*
+
+# Run system updates daily at 3 AM
+0 3 * * * apt update && apt upgrade -y
+
+# Log system status hourly
+0 * * * * top -b -n 1 >> /var/log/system_status.log
+```
+
+#### Best Practices for Cron Jobs 🌟
+
+1. **Timing Considerations**
+
+   - Avoid running resource-intensive jobs during peak hours
+   - Stagger job times to prevent system overload
+   - Consider using random delays for non-critical jobs
+
+2. **Error Handling**
+
+   ```bash
+   # Redirect output to log file
+   * * * * * command >> /var/log/cronjob.log 2>&1
+
+   # Send mail on error only
+   * * * * * command 2>&1 | /usr/bin/mail -s "Cron Error" admin@example.com
+   ```
+
+3. **Path and Environment**
+
+   ```bash
+   # Set path in crontab
+   PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+   # Or use absolute paths in commands
+   0 * * * * /usr/local/bin/script.sh
+   ```
+
+#### Common Crontab Patterns 📝
+
+```bash
+# Common timing patterns
+@yearly             # Run once a year (0 0 1 1 *)
+@monthly            # Run once a month (0 0 1 * *)
+@weekly             # Run once a week (0 0 * * 0)
+@daily              # Run once a day (0 0 * * *)
+@hourly             # Run once an hour (0 * * * *)
+@reboot             # Run at startup
+
+# Example usage
+@daily /scripts/daily-backup.sh
+@reboot /scripts/startup-tasks.sh
+```
+
+#### Troubleshooting Cron Jobs 🔧
+
+1. **Job Not Running**
+
+   ```bash
+   # Check cron daemon
+   systemctl status cron
+
+   # Check cron logs
+   grep CRON /var/log/syslog
+
+   # Verify crontab syntax
+   crontab -l
+   ```
+
+2. **Permission Issues**
+
+   ```bash
+   # Make script executable
+   chmod +x /path/to/script.sh
+
+   # Check file permissions
+   ls -l /path/to/script.sh
+
+   # Run as specific user
+   0 * * * * sudo -u username /path/to/script.sh
+   ```
+
+3. **Environment Problems**
+   ```bash
+   # Add environment variables to crontab
+   SHELL=/bin/bash
+   HOME=/home/username
+   PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+   ```
+
+Remember:
+
+- Always test your cron jobs manually before scheduling
+- Use absolute paths in cron jobs
+- Redirect output to logs for debugging
+- Be mindful of system resources when scheduling jobs
+
 ## System Monitoring Tools
 
 ### 1. htop (Enhanced top)
