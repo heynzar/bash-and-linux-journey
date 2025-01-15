@@ -3,7 +3,9 @@
 ## Basic Navigation and Directory Management
 
 ### 1. pwd (Print Working Directory)
+
 **Purpose**: Shows current directory path
+
 ```bash
 $ pwd
 /home/user/documents
@@ -14,7 +16,9 @@ $ pwd
 ```
 
 ### 2. cd (Change Directory)
+
 **Purpose**: Navigate between directories
+
 ```bash
 $ cd /path/to/directory    # Absolute path
 $ cd documents            # Relative path
@@ -25,7 +29,9 @@ $ cd ~/documents         # Go to documents in home directory
 ```
 
 ### 3. ls (List Directory Contents)
+
 **Purpose**: Display files and directories
+
 ```bash
 # Basic Usage
 $ ls                  # List current directory
@@ -48,7 +54,9 @@ $ ls -d */           # List only directories
 ```
 
 ### 4. mkdir (Make Directory)
+
 **Purpose**: Create new directories
+
 ```bash
 # Basic Usage
 $ mkdir new_directory
@@ -66,7 +74,9 @@ $ mkdir $(date +%Y-%m-%d)              # Create directory with today's date
 ## File Operations
 
 ### 5. cat (Concatenate)
+
 **Purpose**: Display, combine, and create files
+
 ```bash
 # Basic Usage
 $ cat file.txt                    # Display file content
@@ -88,7 +98,9 @@ $ cat >> file.txt               # Append to file
 ```
 
 ### 6. less
+
 **Purpose**: View files with pagination
+
 ```bash
 # Basic Usage
 $ less file.txt
@@ -110,8 +122,79 @@ G         # Go to last line
 q         # Quit
 ```
 
-### 7. touch
+### 7. more
+
+**Purpose**: File perusal filter for viewing text
+
+```bash
+# Basic Usage
+$ more file.txt                    # View file content page by page
+
+# Common Options
+-d        # Display help prompt
+-f        # Count logical lines
+-p        # Clear screen before display
+-c        # Clear screen before display
+-s        # Squeeze multiple blank lines
+
+# Navigation Commands (within more)
+SPACE     # Next page
+b         # Previous page
+/pattern  # Search pattern
+q         # Quit
+
+# Practical Examples
+$ more +10 file.txt               # Start display at line 10
+$ more -s *.txt                   # View multiple files
+$ ls -l | more                    # Paginate directory listing
+```
+
+### 8. head
+
+**Purpose**: Display the beginning of files
+
+```bash
+# Basic Usage
+$ head file.txt                    # Show first 10 lines
+$ head -n 5 file.txt              # Show first 5 lines
+
+# Common Options
+-n        # Number of lines to show
+-c        # Number of bytes to show
+-q        # Quiet mode (no headers)
+-v        # Verbose mode (always show headers)
+
+# Practical Examples
+$ head -n 20 *.log                # Show first 20 lines of all log files
+$ head -c 100 binary.dat          # Show first 100 bytes
+$ head -n -5 file.txt             # Show all but last 5 lines
+```
+
+### 9. tail
+
+**Purpose**: Display the end of files
+
+```bash
+# Basic Usage
+$ tail file.txt                    # Show last 10 lines
+$ tail -n 5 file.txt              # Show last 5 lines
+
+# Common Options
+-n        # Number of lines to show
+-f        # Follow file in real-time
+-F        # Follow and retry if file disappears
+-c        # Number of bytes to show
+
+# Practical Examples
+$ tail -f /var/log/syslog         # Monitor log file in real-time
+$ tail -n +10 file.txt            # Show all lines starting from line 10
+$ tail -f -n0 log.txt | grep ERROR  # Monitor only errors in real-time
+```
+
+### 10. touch
+
 **Purpose**: Create empty files or update timestamps
+
 ```bash
 # Basic Usage
 $ touch file.txt              # Create empty file or update timestamp
@@ -126,8 +209,10 @@ $ touch file{1..10}.txt      # Create multiple files
 $ touch -d "2 hours ago" file.txt   # Set relative time
 ```
 
-### 8. cp (Copy)
+### 11. cp (Copy)
+
 **Purpose**: Copy files and directories
+
 ```bash
 # Basic Usage
 $ cp source.txt destination.txt
@@ -147,8 +232,10 @@ $ cp file{1..5}.txt directory/         # Copy multiple files
 $ cp -u *.txt /backup/                 # Update only newer files
 ```
 
-### 9. mv (Move)
+### 12. mv (Move)
+
 **Purpose**: Move or rename files and directories
+
 ```bash
 # Basic Usage
 $ mv source destination              # Move or rename
@@ -165,8 +252,10 @@ $ mv -i *.txt ../documents/         # Move all .txt files
 $ mv file{1..5}.txt directory/      # Move multiple files
 ```
 
-### 10. rm (Remove)
+### 13. rm (Remove)
+
 **Purpose**: Delete files and directories
+
 ```bash
 # Basic Usage
 $ rm file.txt                       # Remove file
@@ -184,10 +273,97 @@ $ rm -f *.tmp                       # Force remove all .tmp files
 $ rm -rf directory/* && rmdir directory  # Clean directory then remove it
 ```
 
+### 14. tr (Translate)
+
+**Purpose**: Translate or delete characters
+
+```bash
+# Basic Usage
+$ tr 'set1' 'set2'                # Replace characters in set1 with set2
+
+# Common Options
+-d        # Delete characters in set1
+-s        # Squeeze repeated characters
+-c        # Use complement of set1
+
+# Practical Examples
+$ echo "Hello" | tr 'a-z' 'A-Z'   # Convert to uppercase
+$ tr -d '\n\r' < file.txt         # Remove newlines and carriage returns
+$ tr -s ' ' < file.txt            # Squeeze multiple spaces into one
+```
+
+### 15. wc (Word Count)
+
+**Purpose**: Count lines, words, and characters in files
+
+```bash
+# Basic Usage
+$ wc file.txt                      # Show lines, words, and bytes
+$ wc -l file.txt                   # Count lines only
+
+# Common Options
+-l        # Count lines
+-w        # Count words
+-c        # Count bytes
+-m        # Count characters
+-L        # Length of longest line
+
+# Practical Examples
+$ wc -l *.txt                      # Count lines in all text files
+$ find . -type f | wc -l           # Count files in directory and subdirectories
+$ cat file.txt | wc -w             # Count words in a file
+```
+
+### 16. ln (Link)
+
+**Purpose**: Create links between files
+
+```bash
+# Basic Usage
+$ ln source target                 # Create hard link
+$ ln -s source target             # Create symbolic (soft) link
+
+# Common Options
+-s        # Create symbolic link
+-f        # Force creation
+-i        # Interactive mode
+-v        # Verbose output
+-b        # Create backup of existing target file
+
+# Practical Examples
+$ ln -s /path/to/file shortcut     # Create symbolic link named 'shortcut'
+$ ln -s ../shared shared           # Create relative symbolic link
+$ ln file1 file2                   # Create hard link between files
+```
+
 ## Searching and Finding
 
-### 11. find
+### 17. locate
+
+**Purpose**: Find files by name using database
+
+```bash
+# Basic Usage
+$ locate filename                  # Find files matching pattern
+
+# Common Options
+-i        # Ignore case
+-n N      # Limit output to N entries
+-e        # Print only existing files
+-c        # Count matches only
+-r        # Use regular expression
+-b        # Match only basename
+
+# Practical Examples
+$ locate -i "*.pdf"               # Find all PDF files (case insensitive)
+$ locate -r "/home/.*\.txt$"      # Find txt files in home using regex
+$ locate -c "*.jpg"               # Count all JPG files in database
+```
+
+### 18. find
+
 **Purpose**: Search for files and directories
+
 ```bash
 # Basic Usage
 $ find /path -name "pattern"
@@ -225,8 +401,10 @@ $ find . -type f -name "*.log" -size +100M -mtime +30 -exec rm {} \;   # Remove 
 $ find . -type f -exec du -h {} + | sort -rh | head -n 10              # Find largest files
 ```
 
-### 12. grep (Global Regular Expression Print)
+### 19. grep (Global Regular Expression Print)
+
 **Purpose**: Search text patterns in files
+
 ```bash
 # Basic Usage
 $ grep "pattern" file.txt
@@ -256,6 +434,140 @@ $ grep -v "^#" config.txt           # Show non-comment lines
 # Combining with other commands
 $ ps aux | grep "python"            # Find python processes
 $ history | grep "git commit"       # Find git commit commands
+```
+
+### 20. cut
+
+**Purpose**: Extract sections from lines of files
+
+```bash
+# Basic Usage
+$ cut -d',' -f1,3 file.csv        # Extract fields 1 and 3 using comma delimiter
+
+# Common Options
+-d        # Specify delimiter
+-f        # Select fields
+-c        # Select characters
+-b        # Select bytes
+
+# Practical Examples
+$ cut -d':' -f1 /etc/passwd       # Extract usernames
+$ cut -c1-10 file.txt             # Extract first 10 characters of each line
+$ cut -d' ' -f2- file.txt         # Extract all fields except the first
+```
+
+### 21. awk
+
+**Purpose**: Pattern scanning and text processing
+
+```bash
+# Basic Usage
+$ awk '{print $1}' file.txt       # Print first field of each line
+
+# Common Options
+-F        # Set field separator
+-v        # Set variable
+-f        # Read program from file
+
+# Pattern Matching
+$ awk '/pattern/ {print}' file.txt    # Print lines matching pattern
+$ awk '$1 == "value" {print $2}'      # Print second field if first field matches
+
+# Common Operations
+$ awk '{sum += $1} END {print sum}'   # Sum first field
+$ awk 'length($0) > 80'               # Print lines longer than 80 characters
+$ awk '{print NR, $0}'                # Print line numbers
+
+# Practical Examples
+$ awk -F',' '{print $1 ": " $2}' file.csv    # Format CSV data
+$ awk '{s+=$1} END {print "avg=" s/NR}' nums.txt   # Calculate average
+$ awk 'NR%2==0' file.txt                     # Print even-numbered lines
+```
+
+### 22. sort
+
+**Purpose**: Sort lines of text files
+
+```bash
+# Basic Usage
+$ sort file.txt                    # Sort lines alphabetically
+
+# Common Options
+-n        # Numeric sort
+-r        # Reverse order
+-k        # Sort by specific field
+-t        # Specify field separator
+-u        # Remove duplicates
+-h        # Human numeric sort (2K, 1G)
+
+# Practical Examples
+$ sort -k2 -t',' file.csv         # Sort by second field (comma-separated)
+$ sort -nr numbers.txt            # Sort numbers in reverse order
+$ sort -u -k1,1 file.txt          # Sort and remove duplicates based on first field
+```
+
+### 23. uniq
+
+**Purpose**: Report or omit repeated lines
+
+```bash
+# Basic Usage
+$ uniq file.txt                    # Remove adjacent duplicate lines
+
+# Common Options
+-c        # Count occurrences
+-d        # Only print duplicate lines
+-u        # Only print unique lines
+-i        # Ignore case
+-f        # Skip fields
+-s        # Skip characters
+
+# Practical Examples
+$ sort file.txt | uniq            # Remove all duplicate lines (must sort first)
+$ sort file.txt | uniq -c         # Count occurrences of each line
+$ uniq -d file.txt                # Show only duplicate lines
+```
+
+### 24. diff
+
+**Purpose**: Compare files line by line
+
+```bash
+# Basic Usage
+$ diff file1 file2                 # Show differences between files
+
+# Common Options
+-u        # Unified format
+-i        # Ignore case differences
+-b        # Ignore changes in whitespace
+-w        # Ignore all whitespace
+-r        # Recursively compare directories
+-y        # Side-by-side output
+
+# Practical Examples
+$ diff -u file1 file2 > patch.diff # Create patch file
+$ diff -r dir1 dir2                # Compare directories
+$ diff --color file1 file2         # Colorized output
+```
+
+### 25. cmp
+
+**Purpose**: Compare files byte by byte
+
+```bash
+# Basic Usage
+$ cmp file1 file2                  # Compare two files
+
+# Common Options
+-b        # Print differing bytes
+-i N      # Skip first N bytes
+-n N      # Compare at most N bytes
+-s        # Silent mode, return status only
+
+# Practical Examples
+$ cmp -b file1 file2              # Show byte differences
+$ cmp -s file1 file2 && echo "Files are identical"  # Check if files are identical
+$ cmp -i 100 file1 file2          # Compare files starting at byte 100
 ```
 
 ## Tips and Best Practices
