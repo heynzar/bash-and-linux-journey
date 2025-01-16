@@ -1,5 +1,34 @@
 # Linux User and Group Management Guide
 
+## Table of Contents
+
+### User Management Commands
+
+| ID  | Command                                 | Description                    |
+| --- | --------------------------------------- | ------------------------------ |
+| 1   | [`useradd`](#1-useradd-create-new-user) | Create new users in the system |
+| 2   | [`usermod`](#2-usermod-modify-user)     | Modify existing user accounts  |
+| 3   | [`userdel`](#3-userdel-delete-user)     | Delete users from the system   |
+| 4   | [`passwd`](#4-passwd-manage-passwords)  | Manage user passwords          |
+
+### Group Management Commands
+
+| ID  | Command                                      | Description                             |
+| --- | -------------------------------------------- | --------------------------------------- |
+| 5   | [`groupadd`](#1-groupadd-create-new-group)   | Create new groups                       |
+| 6   | [`groupmod`](#2-groupmod-modify-group)       | Modify existing groups                  |
+| 7   | [`groupdel`](#3-groupdel-delete-group)       | Delete groups from the system           |
+| 8   | [`gpasswd`](#4-gpasswd-manage-group-members) | Manage group members and administrators |
+
+### Information Commands
+
+| ID  | Command                                     | Description                      |
+| --- | ------------------------------------------- | -------------------------------- |
+| 9   | [`id`](#1-id-show-usergroup-ids)            | Show user and group IDs          |
+| 10  | [`groups`](#2-groups-show-group-membership) | Display group membership         |
+| 11  | [`who`](#3-who-show-logged-in-users)        | Show logged-in users             |
+| 12  | [`w`](#4-w-detailed-who)                    | Detailed view of logged-in users |
+
 ## Understanding Users and Groups
 
 Every Linux system has users and groups to manage access control and permissions. Each user:
