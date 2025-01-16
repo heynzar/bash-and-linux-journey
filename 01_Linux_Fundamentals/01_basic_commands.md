@@ -1,5 +1,35 @@
 # Linux/Unix Command Reference Guide
 
+## Table of Contents
+
+| ID  | Command                                            | Description                                            |
+| --- | -------------------------------------------------- | ------------------------------------------------------ |
+| 1   | [`pwd`](#1-pwd-print-working-directory)            | Print current working directory path                   |
+| 2   | [`cd`](#2-cd-change-directory)                     | Change between directories                             |
+| 3   | [`ls`](#3-ls-list-directory-contents)              | List directory contents and their properties           |
+| 4   | [`mkdir`](#4-mkdir-make-directory)                 | Create new directories                                 |
+| 5   | [`cat`](#5-cat-concatenate)                        | Display, combine, and create text files                |
+| 6   | [`less`](#6-less)                                  | View text files with forward and backward navigation   |
+| 7   | [`more`](#7-more)                                  | View text files with forward-only pagination           |
+| 8   | [`head`](#8-head)                                  | Display the beginning of files                         |
+| 9   | [`tail`](#9-tail)                                  | Display the end of files                               |
+| 10  | [`touch`](#10-touch)                               | Create empty files or update file timestamps           |
+| 11  | [`cp`](#11-cp-copy)                                | Copy files and directories                             |
+| 12  | [`mv`](#12-mv-move)                                | Move or rename files and directories                   |
+| 13  | [`rm`](#13-rm-remove)                              | Remove files and directories                           |
+| 14  | [`tr`](#14-tr-translate)                           | Translate or delete characters in text                 |
+| 15  | [`wc`](#15-wc-word-count)                          | Count lines, words, and characters in files            |
+| 16  | [`ln`](#16-ln-link)                                | Create hard or symbolic links between files            |
+| 17  | [`locate`](#17-locate)                             | Find files by name using system database               |
+| 18  | [`find`](#18-find)                                 | Search for files and directories with complex criteria |
+| 19  | [`grep`](#19-grep-global-regular-expression-print) | Search for text patterns in files                      |
+| 20  | [`cut`](#20-cut)                                   | Extract sections from lines of files                   |
+| 21  | [`awk`](#21-awk)                                   | Pattern scanning and text processing language          |
+| 22  | [`sort`](#22-sort)                                 | Sort lines of text files                               |
+| 23  | [`uniq`](#23-uniq)                                 | Report or omit repeated lines                          |
+| 24  | [`diff`](#24-diff)                                 | Compare files line by line                             |
+| 25  | [`cmp`](#25-cmp)                                   | Compare files byte by byte                             |
+
 ## Basic Navigation and Directory Management
 
 ### 1. pwd (Print Working Directory)
