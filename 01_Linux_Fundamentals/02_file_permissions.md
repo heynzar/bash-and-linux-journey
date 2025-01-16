@@ -1,5 +1,16 @@
 # Beginner's Guide to Linux File Permissions
 
+## Table of Contents
+
+| ID  | Command/Topic                                         | Description                                 |
+| --- | ----------------------------------------------------- | ------------------------------------------- |
+| 1   | [`chmod`](#1-chmod-change-mode)                       | Change permissions of files and directories |
+| 2   | [`chown`](#2-chown-change-owner)                      | Change the owner of files and directories   |
+| 3   | [`chgrp`](#3-chgrp-change-group)                      | Change the group of files and directories   |
+| 4   | [`umask`](#4-umask-user-mask)                         | Control default permission settings         |
+| 5   | [`getfacl`](#5-getfacl-get-file-access-control-lists) | Display Access Control Lists (ACLs)         |
+| 6   | [`setfacl`](#6-setfacl-set-file-access-control-lists) | Modify Access Control Lists (ACLs)          |
+
 ## Understanding Basic Permissions
 
 Every file and directory in Linux has three types of permissions:
