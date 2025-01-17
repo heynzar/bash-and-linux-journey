@@ -1,5 +1,26 @@
 # Linux Process Management Guide
 
+## Table of Contents
+
+### Core Process Commands
+
+| ID  | Command                                              | Description                                 |
+| --- | ---------------------------------------------------- | ------------------------------------------- |
+| 1   | [`ps`](#1-ps-process-status)                         | Display information about running processes |
+| 2   | [`top`](#2-top-interactive-process-viewer)           | Real-time view of system processes          |
+| 3   | [`kill`](#3-kill-terminate-processes)                | Send signals to processes                   |
+| 4   | [`nice/renice`](#4-nice-and-renice-process-priority) | Manage process priority                     |
+| 5   | [`jobs/bg/fg`](#5-jobs-bg-fg-job-control)            | Manage background and foreground jobs       |
+
+### Scheduled Tasks & Monitoring
+
+| ID  | Command/Topic                                        | Description                         |
+| --- | ---------------------------------------------------- | ----------------------------------- |
+| 6   | [`crontab`](#4-crontab-scheduled-process-management) | Schedule and manage automated tasks |
+| 7   | [`htop`](#1-htop-enhanced-top)                       | Enhanced interactive process viewer |
+| 8   | [`free`](#2-free-memory-usage)                       | Display memory usage                |
+| 9   | [`uptime`](#3-uptime-system-load)                    | Show system load and uptime         |
+
 ## Understanding Processes
 
 Every program running on Linux is a process. Each process has:
