@@ -49,3 +49,33 @@ for dir in "${!file_types[@]}"; do
     fi
 done
 
+# Function to organize files
+organize_files() {
+    local count=0
+    
+    # Process each file
+    for file in "$target_dir"/*; do
+        if [ -f "$file" ]; then
+            # Get file extension
+            extension="${file##*.}"
+            extension=$(echo "$extension" | tr '[:upper:]' '[:lower:]')
+            
+            # Find appropriate directory
+            for dir in "${!file_types[@]}"; do
+                if [[ "${file_types[$dir]}" =~ $extension ]]; then
+                    mv "$file" "$target_dir/$dir/"
+                    log_message "Moved: $file -> $dir/"
+                    ((count++))
+                    break
+                fi
+            done
+        fi
+    done
+    
+    echo "Organized $count files"
+}
+
+# Run organization
+organize_files
+
+echo "Directory organization complete!"
