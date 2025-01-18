@@ -86,6 +86,50 @@ function mark_done {
   echo "Task with ID #$task marked as done."
 }
 
+function mark_skip {
+  if [[ $task -ge 10 ]]; then
+    # Match the task ID and replace the status with [x]
+    sed -i "/ ¦ $task ¦ /s/\[ \]/[-]/" "$TASK_FILE"
+    sed -i "/ ¦ $task ¦ /s/\[x\]/[-]/" "$TASK_FILE"
+  else
+    # Match the task ID with leading zero and replace the status with [x]
+    sed -i "/ ¦ 0$task ¦ /s/\[ \]/[-]/" "$TASK_FILE"
+     sed -i "/ ¦ 0$task ¦ /s/\[x\]/[-]/" "$TASK_FILE"
+  fi
+  echo "Task with ID #$task marked as skiped."
+}
+
+function mark_undone {
+    if [[ $task -ge 10 ]]; then
+    # Match the task ID and replace the status with [x]
+    sed -i "/ ¦ $task ¦ /s/\[x\]/[ ]/" "$TASK_FILE"
+    sed -i "/ ¦ $task ¦ /s/\[-\]/[ ]/" "$TASK_FILE"
+  else
+    # Match the task ID with leading zero and replace the status with [x]
+    sed -i "/ ¦ 0$task ¦ /s/\[x\]/[ ]/" "$TASK_FILE"
+    sed -i "/ ¦ 0$task ¦ /s/\[-\]/[ ]/" "$TASK_FILE"
+  fi
+  echo "Task with ID #$task marked as done."
+}
+
+function archive_done {
+  # Archive completed tasks and the line immediately below them
+  while IFS= read -r task_line; do
+    # Extract the line number of the matching task
+    line_number=$(grep -n "\[x\]" "$TASK_FILE" | grep -F "$task_line" | cut -d: -f1)
+    
+    if [[ -n $line_number ]]; then
+      # Append the task and the line below it to the archive
+      sed -n "${line_number},$((line_number + 1))p" "$TASK_FILE" >> "$ARCHIVE_FILE"
+    fi
+  done < <(grep "\[x\]" "$TASK_FILE")
+
+  # Delete all completed tasks and the line immediately below them
+  sed -i '/\[x\]/,+1d' "$TASK_FILE"
+
+  echo "All completed tasks and their associated lines archived."
+}
+
 # Main logic
 action=$1
 task=$2
