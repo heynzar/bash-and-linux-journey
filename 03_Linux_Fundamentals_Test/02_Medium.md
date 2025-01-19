@@ -48,3 +48,52 @@
 20. How can you view the environmental variables of a specific process?
 
 ---
+
+## Answers
+
+### 01 Basic Commands
+
+1. `cd /`
+2. `ls` lists files and directories, while `ls -l` provides detailed information such as permissions, owner, and size.
+3. `touch <filename>`
+4. `head -n <number> <file>` displays the first `n` lines.
+5. `more` allows forward navigation only, while `less` supports both forward and backward navigation.
+6. `ls -a -lt`
+7. `cp <file1> <file2> <destination_directory>`
+8. `tr 'old_char' 'new_char' < input_file > output_file`
+9. `wc <file>`
+10. `which <command>`
+11. `find . -name <filename>`
+12. `grep` searches for patterns in file contents, while `find` locates files and directories by name.
+13. `uniq <file>`
+14. `diff <file1> <file2>`
+15. `sort -r <file>`
+16. `cut -d '<delimiter>' -f <fields> <file>`
+17. `paste <file1> <file2>`
+18. `ln -s <target> <link_name>`
+19. `rm -rf <directory>`
+20. `grep '<pattern>' *.txt`
+
+### 02 File Permissions
+
+6. `chmod -R <permissions> <directory>`
+7. The sticky bit ensures only the owner can delete files in a directory. Set it with `chmod +t <directory>`.
+8. `umask <value>`
+9. `chown <user>:<group> <file>`
+10. `chmod go-x <directory>`
+
+### 03 Users and Groups
+
+11. `useradd` is a low-level utility; `adduser` is more user-friendly.
+12. `userdel -r <username>`
+13. `passwd -l <username>`
+14. `usermod -g <group> <username>`
+15. It defines groups and their members on the system.
+
+### 04 Process Management
+
+16. `ps -o ppid= -p <PID>`
+17. `at <time>`
+18. `kill` targets a specific PID, while `killall` targets processes by name.
+19. Use `top` or `htop` to identify and `kill <PID>` to terminate.
+20. `cat /proc/<PID>/environ`
