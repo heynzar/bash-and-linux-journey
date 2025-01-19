@@ -38,3 +38,42 @@
 25. What is the difference between `nice` and `renice` commands?
 
 ---
+
+## Answers
+
+### 01 Basic Commands
+
+1. Use quotes or escape characters: `cd "directory with spaces"` or `cd directory\ with\ spaces`.
+2. `find <directory> | wc -l`
+3. `tail -n 15 -f <file>`
+4. `sed -i 's/old_string/new_string/g' <file>`
+5. `du -ah <directory>`
+6. Hard link: `ln <target> <link_name>`, Symbolic link: `ln -s <target> <link_name>`
+7. `find <directory> -name "*.log" -type f -delete`
+8. `sort -n <file> | uniq`
+9. `tr -s ' ' '\n' <file> | sort | uniq -c | sort -nr | head -n 5`
+10. `find . -name "*.txt" -exec du -ch {} + | grep total`
+
+### 02 File Permissions
+
+11. `chmod 700 <file>`
+12. `find / -user <username>`
+13. Use the `chmod g+s <directory>` command to set the setgid bit.
+14. `chmod --reference=<reference_file> <file>`
+15. `find / -perm /4000`
+
+### 03 Users and Groups
+
+16. `who` or `w`
+17. `last <username>`
+18. `usermod -aG group1,group2 <username>`
+19. `chage -M <days> <username>`
+20. It stores hashed passwords and password policies. Only the root user has access to it.
+
+### 04 Process Management
+
+21. Use `nohup <command> &`.
+22. `ps -u <username> | wc -l`
+23. `pkill -SIGTERM <process_name>`
+24. Add a cron job using `crontab -e`: `0 2 * * * <command>`
+25. `nice` starts a process with a specific priority, while `renice` changes the priority of a running process.
