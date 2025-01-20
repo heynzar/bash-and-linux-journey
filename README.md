@@ -41,15 +41,15 @@ This guide serves as a solid starting point for anyone looking to understand Lin
 
 Learn the core concepts of Linux, from basic commands to managing processes. Files included:
 
-- `01_basic_commands.md`: Overview of essential Linux commands.
-- `02_file_permissions.md`: Managing file and directory permissions.
-- `03_users_and_groups.md`: User and group management.
-- `04_process_management.md`: Handling system processes.
-- `Regular_Expressions.md`: Introduction to regular expressions in Linux.
+- [`01_basic_commands.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/01_Linux_Fundamentals/01_basic_commands.md): Overview of essential Linux commands.
+- [`02_file_permissions.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/01_Linux_Fundamentals/02_file_permissions.md): Managing file and directory permissions.
+- [`03_users_and_groups.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/01_Linux_Fundamentals/03_users_and_groups.md): User and group management.
+- [`04_process_management.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/01_Linux_Fundamentals/04_process_management.md): Handling system processes.
+- [`Regular_Expressions.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/01_Linux_Fundamentals/Regular_Expressions.md): Introduction to regular expressions in Linux.
 
 ## 1.1 **Basic Commands**
 
-This is a quick summary of basic Linux commands. For detailed explanations and examples, check the full guide [`01_basic_commands.md`](#).
+This is a quick summary of basic Linux commands. For detailed explanations and examples, check the full guide [`01_basic_commands.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/01_Linux_Fundamentals/01_basic_commands.md).
 
 | ID  | Command  | Description                                            |
 | --- | -------- | ------------------------------------------------------ |
@@ -81,7 +81,7 @@ This is a quick summary of basic Linux commands. For detailed explanations and e
 
 ## 1.2 **File Permissions**
 
-This is a quick summary of file permissions in Linux. For detailed explanations and examples, check the full guide [`02_file_permissions.md`](#).
+This is a quick summary of file permissions in Linux. For detailed explanations and examples, check the full guide [`02_file_permissions.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/01_Linux_Fundamentals/02_file_permissions.md).
 
 | ID  | Command   | Description                                 |
 | --- | --------- | ------------------------------------------- |
@@ -94,7 +94,7 @@ This is a quick summary of file permissions in Linux. For detailed explanations 
 
 ## 1.3 **Users and Groups Management**
 
-This is a quick summary of users and groups management in Linux. For detailed explanations and examples, check the full guide [`03_users_and_groups.md`](#).
+This is a quick summary of users and groups management in Linux. For detailed explanations and examples, check the full guide [`03_users_and_groups.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/01_Linux_Fundamentals/03_users_and_groups.md).
 
 | ID  | Command    | Description                             |
 | --- | ---------- | --------------------------------------- |
@@ -113,7 +113,7 @@ This is a quick summary of users and groups management in Linux. For detailed ex
 
 ## 1.4 **Process Management**
 
-This is a quick summary of process management in Linux. For detailed explanations and examples, check the full guide [`04_process_management.md`](#).
+This is a quick summary of process management in Linux. For detailed explanations and examples, check the full guide [`04_process_management.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/01_Linux_Fundamentals/04_process_management.md).
 
 | ID  | Command       | Description                                 |
 | --- | ------------- | ------------------------------------------- |
@@ -129,7 +129,7 @@ This is a quick summary of process management in Linux. For detailed explanation
 
 ## 1.5 **Regular Expressions**
 
-This is a quick summary of regular expressions in Bash. For detailed explanations and examples, check the full guide [`Regular_Expressions.md`](#).
+This is a quick summary of regular expressions in Bash. For detailed explanations and examples, check the full guide [`Regular_Expressions.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/01_Linux_Fundamentals/Regular_Expressions.md).
 
 | ID  | Pattern | Description                                                |
 | --- | ------- | ---------------------------------------------------------- |
@@ -207,7 +207,7 @@ command2
 # End of script notification
 ```
 
-For detailed examples and practices, explore the full guide [`01_Introduction_Bash_Scripts.md`](#).
+For detailed examples and practices, explore the full guide [`01_Introduction_Bash_Scripts.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/01_Introduction_Bash_Scripts.md).
 
 ## 2.2 Variables
 
@@ -226,7 +226,7 @@ Variables are placeholders for storing data in Bash scripts.
 
 To capture user input, use `read`, optionally with prompts or timeouts. Combine these with command substitution to store output from commands like `date`.
 
-For detailed examples and practices, explore the full guide [`02_Variables.md`](#).
+For detailed examples and practices, explore the full guide [`02_Variables.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/02_Variables.md).
 
 ## 2.3 Special Variables
 
@@ -266,7 +266,7 @@ fi
 - Use meaningful variable names
 - Provide default values for optional parameters
 
-For detailed examples and practices, explore the full guide [`03_Special_variables.md`](#).
+For detailed examples and practices, explore the full guide [`03_Special_variables.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/03_Special_variables.md).
 
 ## 2.4 Control Flow
 
@@ -318,7 +318,7 @@ esac
    - `-w` - Writable
    - `-x` - Executable
 
-For detailed examples and practices, explore the full guide [`04_Control_Flow.md`](#).
+For detailed examples and practices, explore the full guide [`04_Control_Flow.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/04_Control_Flow.md).
 
 ## 2.5 Numbers and Strings
 
@@ -355,7 +355,7 @@ power=$((2 ** 3))  # Exponentiation
 - Uppercase: `${string^^}`
 - Lowercase: `${string,,}`
 
-For detailed examples and practices, explore the full guide [`05_Numbers_and_Strings.md`](#).
+For detailed examples and practices, explore the full guide [`05_Numbers_and_Strings.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/05_Numbers_and_Strings.md).
 
 ## 2.6 Loops and Iteration
 
@@ -400,7 +400,7 @@ done < file.txt
 - `break` - Exit the loop
 - `continue` - Skip to next iteration
 
-For detailed examples and practices, explore the full guide [`06_Loops_and_Iteration.md`](#).
+For detailed examples and practices, explore the full guide [`06_Loops_and_Iteration.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/06_Loops_and_Iteration.md).
 
 ## 2.7 Functions
 
@@ -429,7 +429,7 @@ For detailed examples and practices, explore the full guide [`06_Loops_and_Itera
 4. **Local Variables**
    - Use `local` keyword to restrict variable scope within functions.
 
-For detailed examples and practices, explore the full guide [`07_Functions.md`](#).
+For detailed examples and practices, explore the full guide [`07_Functions.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/07_Functions.md).
 
 ---
 
@@ -475,7 +475,7 @@ Test your understanding of Linux basics with three levels of challenges:
 19. How do you run a command in the background?
 20. What is the command to bring a background process to the foreground?
 
-I've organized the answers in this file [`01_Easy.md`](#).
+I've organized the answers in this file [`01_Easy.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/03_Linux_Fundamentals_Test/01_Easy.md).
 
 ## 3.2 Medium Linux Questions
 
@@ -525,6 +525,51 @@ I've organized the answers in this file [`01_Easy.md`](#).
 33. What is the difference between `kill` and `killall` commands?
 34. How do you identify and kill processes consuming the most CPU resources?
 35. How can you view the environmental variables of a specific process?
+
+I've organized the answers in this file [`02_Medium.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/03_Linux_Fundamentals_Test/02_Medium.md).
+
+## 3.3 Hard Linux Questions
+
+**01 Basic Commands**
+
+1. How do you navigate to a directory with spaces in its name?
+2. What command would you use to count the number of files and directories within a specific directory?
+3. How can you view the last 15 lines of a file and keep monitoring it for new lines?
+4. Which command allows you to replace a specific string in a file with another string and save the changes?
+5. How can you list all files in a directory and its subdirectories, along with their sizes?
+6. What is the difference between a hard link and a symbolic link, and how do you create each?
+7. How do you find and delete all `.log` files within a directory and its subdirectories?
+8. How can you sort the contents of a file numerically and remove duplicate lines?
+9. What command can you use to display the 5 most frequently occurring words in a file?
+10. How do you find the total size of all `.txt` files within the current directory?
+
+**02 File Permissions**
+
+11. How do you set permissions so that only the owner can read, write, and execute a file, while the group and others have no permissions?
+12. What command is used to find all files owned by a specific user?
+13. How do you ensure that new files created in a directory inherit the group ownership of the directory?
+14. How can you change the permissions of a file to match those of another file?
+15. Which command allows you to find files with the SUID bit set?
+
+**03 Users and Groups**
+
+16. How do you list all users currently logged into the system?
+17. What command would you use to check the last login time of a user?
+18. How can you add a user to multiple groups at once?
+19. How do you change the password expiration policy for a specific user?
+20. What is the purpose of the `/etc/shadow` file, and who has access to it?
+
+**04 Process Management**
+
+21. How can you run a command that continues to execute even after you log out?
+22. How do you monitor the number of processes run by a specific user?
+23. Which command allows you to send a specific signal (e.g., `SIGTERM`) to a process by name?
+24. How do you schedule a recurring job to run every day at 2 AM?
+25. What is the difference between `nice` and `renice` commands?
+
+I've organized the answers in this file [`03_Hard.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/03_Linux_Fundamentals_Test/03_Hard.md).
+
+---
 
 ## 4. **Practical Scripts**
 
