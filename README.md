@@ -1,4 +1,4 @@
-# Bash and Linux Journey
+# 🐧 Bash and Linux Journey
 
 This project started as my journey to learn Linux and Bash scripting as part of a university module.
 
@@ -37,11 +37,7 @@ This guide serves as a solid starting point for anyone looking to understand Lin
 
 ---
 
-## 📂 Project Structure
-
-The project is organized into the following sections:
-
-### 1. **Linux Fundamentals**
+## 1. **Linux Fundamentals**
 
 Learn the core concepts of Linux, from basic commands to managing processes. Files included:
 
@@ -51,37 +47,7 @@ Learn the core concepts of Linux, from basic commands to managing processes. Fil
 - `04_process_management.md`: Handling system processes.
 - `Regular_Expressions.md`: Introduction to regular expressions in Linux.
 
-### 2. **Bash Fundamentals**
-
-A step-by-step guide to Bash scripting, covering everything from the basics to advanced concepts. Files included:
-
-- `01_Introduction_Bash_Scripts.md`: Getting started with Bash scripts.
-- `02_Variables.md`: Understanding variables in Bash.
-- `03_Special_variables.md`: Overview of special variables.
-- `04_Control_Flow.md`: Conditional statements and control flow.
-- `05_Numbers_and_Strings.md`: Working with numbers and strings.
-- `06_Loops_and_Iteration.md`: Looping constructs in Bash.
-- `07_Functions.md`: Creating and using functions in Bash.
-
-### 3. **Linux Fundamentals Test**
-
-Test your understanding of Linux basics with three levels of challenges:
-
-- `01_Easy.md`: Simple tasks to build confidence.
-- `02_Medium.md`: Intermediate challenges to test your skills.
-- `03_Hard.md`: Advanced problems, if you conquer these, you're ready for anything!
-
-### 4. **Practical Scripts**
-
-Real-world examples of Bash scripts to reinforce learning and showcase practical use cases:
-
-- `directory_organizer.sh`: Automatically organize files into directories based on their type.
-- `system_info.sh.md`: Display detailed system statistics at a glance.
-- `todo.sh`: A simple script to manage your tasks from the terminal.
-
----
-
-## 1.1 **Basic Commands**
+### 1.1 **Basic Commands**
 
 This is a quick summary of basic Linux commands. For detailed explanations and examples, check the full guide [`01_basic_commands.md`](#).
 
@@ -113,7 +79,7 @@ This is a quick summary of basic Linux commands. For detailed explanations and e
 | 24  | `diff`   | Compare files line by line                             |
 | 25  | `cmp`    | Compare files byte by byte                             |
 
-## 1.2 **File Permissions**
+### 1.2 **File Permissions**
 
 This is a quick summary of file permissions in Linux. For detailed explanations and examples, check the full guide [`02_file_permissions.md`](#).
 
@@ -126,7 +92,7 @@ This is a quick summary of file permissions in Linux. For detailed explanations 
 | 5   | `getfacl` | Display Access Control Lists (ACLs)         |
 | 6   | `setfacl` | Modify Access Control Lists (ACLs)          |
 
-## 1.3 **Users and Groups Management**
+### 1.3 **Users and Groups Management**
 
 This is a quick summary of users and groups management in Linux. For detailed explanations and examples, check the full guide [`03_users_and_groups.md`](#).
 
@@ -145,7 +111,7 @@ This is a quick summary of users and groups management in Linux. For detailed ex
 | 11  | `who`      | Show logged-in users                    |
 | 12  | `w`        | Detailed view of logged-in users        |
 
-## 1.4 **Process Management**
+### 1.4 **Process Management**
 
 This is a quick summary of process management in Linux. For detailed explanations and examples, check the full guide [`04_process_management.md`](#).
 
@@ -161,7 +127,7 @@ This is a quick summary of process management in Linux. For detailed explanation
 | 8   | `free`        | Display memory usage                        |
 | 9   | `uptime`      | Show system load and uptime                 |
 
-## 1.5 **Regular Expressions**
+### 1.5 **Regular Expressions**
 
 This is a quick summary of regular expressions in Bash. For detailed explanations and examples, check the full guide [`Regular_Expressions.md`](#).
 
@@ -185,7 +151,63 @@ This is a quick summary of regular expressions in Bash. For detailed explanation
 | 16  | `\w`    | Matches any word character (equivalent to [a-zA-Z0-9_])    |
 | 17  | `\s`    | Matches any whitespace character                           |
 
-## 2.2 Variables
+## 2. **Bash Fundamentals**
+
+A step-by-step guide to Bash scripting, covering everything from the basics to advanced concepts. Files included:
+
+- `01_Introduction_Bash_Scripts.md`: Getting started with Bash scripts.
+- `02_Variables.md`: Understanding variables in Bash.
+- `03_Special_variables.md`: Overview of special variables.
+- `04_Control_Flow.md`: Conditional statements and control flow.
+- `05_Numbers_and_Strings.md`: Working with numbers and strings.
+- `06_Loops_and_Iteration.md`: Looping constructs in Bash.
+- `07_Functions.md`: Creating and using functions in Bash.
+
+### 2.1 Introduction To Bash Scripts
+
+**Core Concepts**
+
+A Bash script is a text file containing a sequence of shell commands for automated execution. Think of it as a recipe for your computer to follow.
+
+**Essential Components**
+
+1. **Shebang Line**
+
+   - Every script starts with `#!/bin/bash`
+   - Must be the first line of the file
+
+2. **Basic Script Creation Process**
+   ```bash
+   nano script_name.sh    # Create/edit script
+   chmod +x script_name.sh # Make executable
+   ./script_name.sh       # Run script
+   ```
+
+**Best Practices**
+
+- Include clear comments explaining the script's purpose
+- Use descriptive filenames (e.g., `backup_photos.sh` instead of `script1.sh`)
+- Avoid spaces around equal signs in assignments (`name="John"`, not `name = "John"`)
+
+## Script Structure Example
+
+```bash
+#!/bin/bash
+
+# Script purpose
+# Author
+# Date
+
+# Main commands
+command1
+command2
+
+# End of script notification
+```
+
+For detailed examples and practices, explore the full guide [`01_Introduction_Bash_Scripts.md`](#).
+
+### 2.2 Variables
 
 Variables are placeholders for storing data in Bash scripts.
 
@@ -203,3 +225,61 @@ Variables are placeholders for storing data in Bash scripts.
 To capture user input, use `read`, optionally with prompts or timeouts. Combine these with command substitution to store output from commands like `date`.
 
 For detailed examples and practices, explore the full guide [`02_Variables.md`](#).
+
+### 2.3 Special Variables
+
+**Special Variables Overview**
+
+Key shell variables and their purposes:
+
+- `$0` - Script name
+- `$1` to `$9` - Script arguments (positional parameters)
+- `$#` - Number of arguments
+- `$*` and `$@` - All arguments
+- `$?` - Last command's exit status
+- `$$` - Current process ID
+- `$!` - Last background process ID
+
+**Parameter Handling**
+
+```bash
+#!/bin/bash
+name=${1:-"Default"}    # Default value if parameter is unset
+length=${#1}            # Parameter length
+substring=${1:0:3}      # Extract substring
+```
+
+**Best Practices**
+
+- Quote variables when using them: `"$variable"`
+- Check required arguments:
+
+```bash
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 arg1 arg2"
+    exit 1
+fi
+```
+
+- Use meaningful variable names
+- Provide default values for optional parameters
+
+For detailed examples and practices, explore the full guide [`03_Special_variables.md`](#).
+
+---
+
+## 3. **Linux Fundamentals Test**
+
+Test your understanding of Linux basics with three levels of challenges:
+
+- `01_Easy.md`: Simple tasks to build confidence.
+- `02_Medium.md`: Intermediate challenges to test your skills.
+- `03_Hard.md`: Advanced problems, if you conquer these, you're ready for anything!
+
+## 4. **Practical Scripts**
+
+Real-world examples of Bash scripts to reinforce learning and showcase practical use cases:
+
+- `directory_organizer.sh`: Automatically organize files into directories based on their type.
+- `system_info.sh.md`: Display detailed system statistics at a glance.
+- `todo.sh`: A simple script to manage your tasks from the terminal.
