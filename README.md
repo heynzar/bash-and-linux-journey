@@ -27,9 +27,9 @@ This guide serves as a solid starting point for anyone looking to understand Lin
    2.6. [Loops and Iteration](#26-loops-and-iteration)  
    2.7. [Functions](#27-functions)
 3. [Linux Fundamentals Test](#3-linux-fundamentals-test)  
-   3.1. [Easy](#31-easy)  
-   3.2. [Medium](#32-medium)  
-   3.3. [Hard](#33-hard)
+   3.1. [Easy](#31-easy-linux-questions)  
+   3.2. [Medium](#32-medium-linux-questions)  
+   3.3. [Hard](#33-hard-linux-questions)
 4. [Practical Scripts](#4-practical-scripts)\
    4.1. [Directory Organizer](#directory-organizer)\
    4.2. [System information](#system-information)  
@@ -440,6 +440,91 @@ Test your understanding of Linux basics with three levels of challenges:
 - `01_Easy.md`: Simple tasks to build confidence.
 - `02_Medium.md`: Intermediate challenges to test your skills.
 - `03_Hard.md`: Advanced problems, if you conquer these, you're ready for anything!
+
+## 3.1 Easy Linux Questions
+
+**01 Basic Commands**
+
+1. What is the command to display the current working directory?
+2. How do you list all files and directories, including hidden ones?
+3. Which command is used to create a new directory?
+4. How do you display the content of a text file?
+5. What command is used to move or rename a file?
+
+**02 File Permissions**
+
+6. How do you check the permissions of a file or directory?
+7. What does the permission `rwxr-xr--` mean?
+8. Which command is used to change the ownership of a file?
+9. How do you change file permissions using symbolic notation (e.g., add write permission to the owner)?
+10. What is the numeric value of `rw-r--r--` in octal notation?
+
+**03 Users and Groups**
+
+11. Which command is used to display information about the currently logged-in user?
+12. How do you switch to a different user account?
+13. What command is used to add a new user to the system?
+14. How can you check the groups a user belongs to?
+15. Which file contains the list of all users on a system?
+
+**04 Process Management**
+
+16. What command is used to display a list of running processes?
+17. How do you terminate a process using its PID?
+18. Which command shows the real-time CPU and memory usage of processes?
+19. How do you run a command in the background?
+20. What is the command to bring a background process to the foreground?
+
+I've organized the answers in this file [`01_Easy.md`](#).
+
+## 3.2 Medium Linux Questions
+
+**01 Basic Commands**
+
+1. How do you navigate to the root directory from the current working directory?
+2. What is the difference between `ls` and `ls -l`?
+3. How do you create a new file without using a text editor?
+4. Which command is used to view the first 10 lines of a file, and how do you change the number of lines displayed?
+5. What is the difference between `more` and `less` commands?
+6. How do you display all files in a directory, including hidden ones, sorted by modification time?
+7. How do you copy multiple files to a directory?
+8. Which command allows you to replace all occurrences of a character in a file with another character?
+9. How can you count the number of lines, words, and characters in a file?
+10. How do you find the location of a command’s executable file?
+11. Which command helps you find files by name in the current directory and its subdirectories?
+12. What is the difference between `grep` and `find` commands?
+13. How do you display only unique lines from a file?
+14. What command can you use to compare two files and highlight the differences?
+15. How do you sort the lines of a file in reverse order?
+16. Which command allows you to display specific columns from a file?
+17. How can you combine the output of two files line by line?
+18. What is the purpose of the `ln` command, and how do you create a symbolic link?
+19. How do you permanently delete a directory and all its contents?
+20. How can you search for a specific pattern in all `.txt` files within a directory?
+
+**02 File Permissions**
+
+21. How do you recursively change permissions for all files in a directory?
+22. What does the sticky bit do, and how do you set it on a directory?
+23. How can you set default permissions for newly created files using `umask`?
+24. What command is used to change both the owner and group of a file at once?
+25. How do you remove execute permission for the group and others from a directory?
+
+**03 Users and Groups**
+
+26. What is the difference between `useradd` and `adduser` commands?
+27. How do you delete a user along with their home directory?
+28. Which command is used to lock a user account?
+29. How can you change the primary group of a user?
+30. What is the purpose of the `/etc/group` file?
+
+**04 Process Management**
+
+31. How do you display the parent process ID (PPID) of a process?
+32. Which command is used to schedule a job to run at a specific time?
+33. What is the difference between `kill` and `killall` commands?
+34. How do you identify and kill processes consuming the most CPU resources?
+35. How can you view the environmental variables of a specific process?
 
 ## 4. **Practical Scripts**
 
