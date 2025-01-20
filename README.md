@@ -31,9 +31,9 @@ This guide serves as a solid starting point for anyone looking to understand Lin
    3.2. [Medium](#32-medium-linux-questions)  
    3.3. [Hard](#33-hard-linux-questions)
 4. [Practical Scripts](#4-practical-scripts)\
-   4.1. [Directory Organizer](#directory-organizer)\
-   4.2. [System information](#system-information)  
-   4.3. [Todo List](#todo)
+   4.1. [Directory Organizer](#4-practical-scripts)\
+   4.2. [System information](#4-practical-scripts)  
+   4.3. [Todo List](#4-practical-scripts)
 
 ---
 
@@ -157,13 +157,13 @@ This is a quick summary of regular expressions in Bash. For detailed explanation
 
 A step-by-step guide to Bash scripting, covering everything from the basics to advanced concepts. Files included:
 
-- `01_Introduction_Bash_Scripts.md`: Getting started with Bash scripts.
-- `02_Variables.md`: Understanding variables in Bash.
-- `03_Special_variables.md`: Overview of special variables.
-- `04_Control_Flow.md`: Conditional statements and control flow.
-- `05_Numbers_and_Strings.md`: Working with numbers and strings.
-- `06_Loops_and_Iteration.md`: Looping constructs in Bash.
-- `07_Functions.md`: Creating and using functions in Bash.
+- [`01_Introduction_Bash_Scripts.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/01_Introduction_Bash_Scripts.md): Getting started with Bash scripts.
+- [`02_Variables.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/02_Variables.md): Understanding variables in Bash.
+- [`03_Special_variables.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/03_Special_variables.md): Overview of special variables.
+- [`04_Control_Flow.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/04_Control_Flow.md): Conditional statements and control flow.
+- [`05_Numbers_and_Strings.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/05_Numbers_and_Strings.md): Working with numbers and strings.
+- [`06_Loops_and_Iteration.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/06_Loops_and_Iteration.md): Looping constructs in Bash.
+- [`07_Functions.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/07_Functions.md): Creating and using functions in Bash.
 
 ## 2.1 Introduction To Bash Scripts
 
@@ -404,30 +404,29 @@ For detailed examples and practices, explore the full guide [`06_Loops_and_Itera
 
 ## 2.7 Functions
 
-### Key Concepts
+### 1. Basic Function Structure
 
-1. **Basic Function Structure**
+- Define a function using:
+  ```bash
+  function_name() {
+      # Function code
+  }
+  ```
+- Call the function by its name.
 
-   - Define a function using:
-     ```bash
-     function_name() {
-         # Function code
-     }
-     ```
-   - Call the function by its name.
+### 2. Functions with Parameters
 
-2. **Functions with Parameters**
+- Access parameters using `$1`, `$2`, etc.
+- Use `$@` to loop through all parameters.
 
-   - Access parameters using `$1`, `$2`, etc.
-   - Use `$@` to loop through all parameters.
+### 3. Return Values
 
-3. **Return Values**
+- Use `return` for exit codes (success: `0`, failure: non-zero).
+- Use `echo` to output values for further processing.
 
-   - Use `return` for exit codes (success: `0`, failure: non-zero).
-   - Use `echo` to output values for further processing.
+### 4. Local Variables
 
-4. **Local Variables**
-   - Use `local` keyword to restrict variable scope within functions.
+- Use `local` keyword to restrict variable scope within functions.
 
 For detailed examples and practices, explore the full guide [`07_Functions.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/02_Bash_Fundamentals/07_Functions.md).
 
@@ -437,9 +436,9 @@ For detailed examples and practices, explore the full guide [`07_Functions.md`](
 
 Test your understanding of Linux basics with three levels of challenges:
 
-- `01_Easy.md`: Simple tasks to build confidence.
-- `02_Medium.md`: Intermediate challenges to test your skills.
-- `03_Hard.md`: Advanced problems, if you conquer these, you're ready for anything!
+- [`01_Easy.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/03_Linux_Fundamentals_Test/01_Easy.md): Simple tasks to build confidence.
+- [`02_Medium.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/03_Linux_Fundamentals_Test/02_Medium.md): Intermediate challenges to test your skills.
+- [`03_Hard.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/03_Linux_Fundamentals_Test/03_Hard.md): Advanced problems, if you conquer these, you're ready for anything!
 
 ## 3.1 Easy Linux Questions
 
@@ -573,8 +572,8 @@ I've organized the answers in this file [`03_Hard.md`](https://github.com/heynza
 
 ## 4. **Practical Scripts**
 
-Real-world examples of Bash scripts to reinforce learning and showcase practical use cases:
+Some real-world examples of Bash scripts to reinforce learning and showcase practical use cases. Check those files, or run the scripts on your machine to see how they work.
 
-- `directory_organizer.sh`: Automatically organize files into directories based on their type.
-- `system_info.sh.md`: Display detailed system statistics at a glance.
-- `todo.sh`: A simple script to manage your tasks from the terminal.
+- [`directory_organizer.sh`](https://github.com/heynzar/bash-and-linux-journey/blob/main/04_Practical_Scripts/directory_organizer.sh): Automatically organize files into directories based on their type.
+- [`system_info.sh.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/04_Practical_Scripts/system_info.sh): Display detailed system statistics at a glance.
+- [`todo.sh`](https://github.com/heynzar/bash-and-linux-journey/blob/main/04_Practical_Scripts/todo.sh): A simple script to manage your tasks from the terminal.
