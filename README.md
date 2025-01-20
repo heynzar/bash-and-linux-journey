@@ -15,7 +15,7 @@ This guide serves as a solid starting point for anyone looking to understand Lin
 1. [Linux Fundamentals](#1-linux-fundamentals)  
    1.1. [Basic Commands](#11-basic-commands)  
    1.2. [File Permissions](#12-file-permissions)  
-   1.3. [Users and Groups](#13-users-and-groups)  
+   1.3. [Users and Groups](#13-users-and-groups-management)  
    1.4. [Process Management](#14-process-management)  
    1.5. [Regular Expressions](#15-regular-expressions)
 2. [Bash Fundamentals](#2-bash-fundamentals)  
@@ -75,9 +75,9 @@ Test your understanding of Linux basics with three levels of challenges:
 
 Real-world examples of Bash scripts to reinforce learning and showcase practical use cases:
 
-- **Directory Organizer**: Automatically organize files into directories based on their type.
-- **System Information**: Display detailed system statistics at a glance.
-- **Todo List**: A simple script to manage your tasks from the terminal.
+- `directory_organizer.sh`: Automatically organize files into directories based on their type.
+- `system_info.sh.md`: Display detailed system statistics at a glance.
+- `todo.sh`: A simple script to manage your tasks from the terminal.
 
 ---
 
@@ -112,3 +112,51 @@ This is a quick summary of basic Linux commands. For detailed explanations and e
 | 23  | `uniq`   | Report or omit repeated lines                          |
 | 24  | `diff`   | Compare files line by line                             |
 | 25  | `cmp`    | Compare files byte by byte                             |
+
+## 1.2 **File Permissions**
+
+This is a quick summary of file permissions in Linux. For detailed explanations and examples, check the full guide [`02_file_permissions.md`](#).
+
+| ID  | Command/Topic | Description                                 |
+| --- | ------------- | ------------------------------------------- |
+| 1   | `chmod`       | Change permissions of files and directories |
+| 2   | `chown`       | Change the owner of files and directories   |
+| 3   | `chgrp`       | Change the group of files and directories   |
+| 4   | `umask`       | Control default permission settings         |
+| 5   | `getfacl`     | Display Access Control Lists (ACLs)         |
+| 6   | `setfacl`     | Modify Access Control Lists (ACLs)          |
+
+## 1.3 **Users and Groups Management**
+
+This is a quick summary of users and groups management in Linux. For detailed explanations and examples, check the full guide [`03_users_and_groups.md`](#).
+
+| ID  | Command    | Description                             |
+| --- | ---------- | --------------------------------------- |
+| 1   | `useradd`  | Create new users in the system          |
+| 2   | `usermod`  | Modify existing user accounts           |
+| 3   | `userdel`  | Delete users from the system            |
+| 4   | `passwd`   | Manage user passwords                   |
+| 5   | `groupadd` | Create new groups                       |
+| 6   | `groupmod` | Modify existing groups                  |
+| 7   | `groupdel` | Delete groups from the system           |
+| 8   | `gpasswd`  | Manage group members and administrators |
+| 9   | `id`       | Show user and group IDs                 |
+| 10  | `groups`   | Display group membership                |
+| 11  | `who`      | Show logged-in users                    |
+| 12  | `w`        | Detailed view of logged-in users        |
+
+## 1.3 **Process Management**
+
+This is a quick summary of process management in Linux. For detailed explanations and examples, check the full guide [`04_process_management.md`](#).
+
+| ID  | Command       | Description                                 |
+| --- | ------------- | ------------------------------------------- |
+| 1   | `ps`          | Display information about running processes |
+| 2   | `top`         | Real-time view of system processes          |
+| 3   | `kill`        | Send signals to processes                   |
+| 4   | `nice/renice` | Manage process priority                     |
+| 5   | `jobs/bg/fg`  | Manage background and foreground jobs       |
+| 6   | `crontab`     | Schedule and manage automated tasks         |
+| 7   | `htop`        | Enhanced interactive process viewer         |
+| 8   | `free`        | Display memory usage                        |
+| 9   | `uptime`      | Show system load and uptime                 |
