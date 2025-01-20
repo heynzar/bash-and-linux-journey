@@ -8,7 +8,7 @@ This guide serves as a solid starting point for anyone looking to understand Lin
 
 ---
 
-![Project Cover](./cover.jpg)
+![Project Cover, Bash and Linux Guide for Beginners](./cover.jpg)
 
 ## 📚 Table of Contents
 
@@ -117,14 +117,14 @@ This is a quick summary of basic Linux commands. For detailed explanations and e
 
 This is a quick summary of file permissions in Linux. For detailed explanations and examples, check the full guide [`02_file_permissions.md`](#).
 
-| ID  | Command/Topic | Description                                 |
-| --- | ------------- | ------------------------------------------- |
-| 1   | `chmod`       | Change permissions of files and directories |
-| 2   | `chown`       | Change the owner of files and directories   |
-| 3   | `chgrp`       | Change the group of files and directories   |
-| 4   | `umask`       | Control default permission settings         |
-| 5   | `getfacl`     | Display Access Control Lists (ACLs)         |
-| 6   | `setfacl`     | Modify Access Control Lists (ACLs)          |
+| ID  | Command   | Description                                 |
+| --- | --------- | ------------------------------------------- |
+| 1   | `chmod`   | Change permissions of files and directories |
+| 2   | `chown`   | Change the owner of files and directories   |
+| 3   | `chgrp`   | Change the group of files and directories   |
+| 4   | `umask`   | Control default permission settings         |
+| 5   | `getfacl` | Display Access Control Lists (ACLs)         |
+| 6   | `setfacl` | Modify Access Control Lists (ACLs)          |
 
 ## 1.3 **Users and Groups Management**
 
@@ -145,7 +145,7 @@ This is a quick summary of users and groups management in Linux. For detailed ex
 | 11  | `who`      | Show logged-in users                    |
 | 12  | `w`        | Detailed view of logged-in users        |
 
-## 1.3 **Process Management**
+## 1.4 **Process Management**
 
 This is a quick summary of process management in Linux. For detailed explanations and examples, check the full guide [`04_process_management.md`](#).
 
@@ -160,3 +160,46 @@ This is a quick summary of process management in Linux. For detailed explanation
 | 7   | `htop`        | Enhanced interactive process viewer         |
 | 8   | `free`        | Display memory usage                        |
 | 9   | `uptime`      | Show system load and uptime                 |
+
+## 1.5 **Regular Expressions**
+
+This is a quick summary of regular expressions in Bash. For detailed explanations and examples, check the full guide [`Regular_Expressions.md`](#).
+
+| ID  | Pattern | Description                                                |
+| --- | ------- | ---------------------------------------------------------- |
+| 1   | `.`     | Matches any single character                               |
+| 2   | `[]`    | Matches any character within the brackets                  |
+| 3   | `[^]`   | Matches any character not within the brackets              |
+| 4   | `-`     | Defines a range of characters within brackets              |
+| 5   | `*`     | Matches zero or more occurrences of the previous character |
+| 6   | `+`     | Matches one or more occurrences of the previous character  |
+| 7   | `?`     | Matches zero or one occurrence of the previous character   |
+| 8   | `^`     | Matches the start of a line                                |
+| 9   | `$`     | Matches the end of a line                                  |
+| 10  | `{}`    | Specifies exact number of occurrences                      |
+| 11  | `\`     | Escapes special characters                                 |
+| 12  | `()`    | Groups patterns together                                   |
+| 13  | `\|`    | Alternation (OR operator)                                  |
+| 14  | `\b`    | Word boundary                                              |
+| 15  | `\d`    | Matches any digit (equivalent to [0-9])                    |
+| 16  | `\w`    | Matches any word character (equivalent to [a-zA-Z0-9_])    |
+| 17  | `\s`    | Matches any whitespace character                           |
+
+## 2.2 Variables
+
+Variables are placeholders for storing data in Bash scripts.
+
+**Key takeaways:**
+
+- Assign values with `=` (no spaces).
+- Use meaningful names (e.g., `user_name` not `a`).
+- Access values with `$`, like `$name`.
+
+**Types include:**
+
+- **Shell Variables:** Script-local variables.
+- **Environment Variables:** System-wide variables like `$HOME` and `$USER`.
+
+To capture user input, use `read`, optionally with prompts or timeouts. Combine these with command substitution to store output from commands like `date`.
+
+For detailed examples and practices, explore the full guide [`02_Variables.md`](#).
