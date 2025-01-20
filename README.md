@@ -151,6 +151,8 @@ This is a quick summary of regular expressions in Bash. For detailed explanation
 | 16  | `\w`    | Matches any word character (equivalent to [a-zA-Z0-9_])    |
 | 17  | `\s`    | Matches any whitespace character                           |
 
+---
+
 ## 2. **Bash Fundamentals**
 
 A step-by-step guide to Bash scripting, covering everything from the basics to advanced concepts. Files included:
@@ -354,6 +356,80 @@ power=$((2 ** 3))  # Exponentiation
 - Lowercase: `${string,,}`
 
 For detailed examples and practices, explore the full guide [`05_Numbers_and_Strings.md`](#).
+
+## 2.6 Loops and Iteration
+
+### Loop Types
+
+**1. For Loops**
+
+```bash
+# Basic syntax
+for i in 1 2 3 4 5; do
+    echo "$i"
+done
+
+# Range syntax
+for i in {1..5}; do
+    echo "$i"
+done
+
+# C-style syntax
+for ((i=1; i<=5; i++)); do
+    echo "$i"
+done
+```
+
+**2. While Loops**
+
+```bash
+# Basic while
+counter=1
+while [ $counter -le 5 ]; do
+    ((counter++))
+done
+
+# Reading files
+while read -r line; do
+    echo "$line"
+done < file.txt
+```
+
+### Control Statements
+
+- `break` - Exit the loop
+- `continue` - Skip to next iteration
+
+For detailed examples and practices, explore the full guide [`06_Loops_and_Iteration.md`](#).
+
+## 2.7 Functions
+
+### Key Concepts
+
+1. **Basic Function Structure**
+
+   - Define a function using:
+     ```bash
+     function_name() {
+         # Function code
+     }
+     ```
+   - Call the function by its name.
+
+2. **Functions with Parameters**
+
+   - Access parameters using `$1`, `$2`, etc.
+   - Use `$@` to loop through all parameters.
+
+3. **Return Values**
+
+   - Use `return` for exit codes (success: `0`, failure: non-zero).
+   - Use `echo` to output values for further processing.
+
+4. **Local Variables**
+   - Use `local` keyword to restrict variable scope within functions.
+
+For detailed examples and practices, explore the full guide [`07_Functions.md`](#).
 
 ---
 
