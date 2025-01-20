@@ -47,7 +47,7 @@ Learn the core concepts of Linux, from basic commands to managing processes. Fil
 - `04_process_management.md`: Handling system processes.
 - `Regular_Expressions.md`: Introduction to regular expressions in Linux.
 
-### 1.1 **Basic Commands**
+## 1.1 **Basic Commands**
 
 This is a quick summary of basic Linux commands. For detailed explanations and examples, check the full guide [`01_basic_commands.md`](#).
 
@@ -79,7 +79,7 @@ This is a quick summary of basic Linux commands. For detailed explanations and e
 | 24  | `diff`   | Compare files line by line                             |
 | 25  | `cmp`    | Compare files byte by byte                             |
 
-### 1.2 **File Permissions**
+## 1.2 **File Permissions**
 
 This is a quick summary of file permissions in Linux. For detailed explanations and examples, check the full guide [`02_file_permissions.md`](#).
 
@@ -92,7 +92,7 @@ This is a quick summary of file permissions in Linux. For detailed explanations 
 | 5   | `getfacl` | Display Access Control Lists (ACLs)         |
 | 6   | `setfacl` | Modify Access Control Lists (ACLs)          |
 
-### 1.3 **Users and Groups Management**
+## 1.3 **Users and Groups Management**
 
 This is a quick summary of users and groups management in Linux. For detailed explanations and examples, check the full guide [`03_users_and_groups.md`](#).
 
@@ -111,7 +111,7 @@ This is a quick summary of users and groups management in Linux. For detailed ex
 | 11  | `who`      | Show logged-in users                    |
 | 12  | `w`        | Detailed view of logged-in users        |
 
-### 1.4 **Process Management**
+## 1.4 **Process Management**
 
 This is a quick summary of process management in Linux. For detailed explanations and examples, check the full guide [`04_process_management.md`](#).
 
@@ -127,7 +127,7 @@ This is a quick summary of process management in Linux. For detailed explanation
 | 8   | `free`        | Display memory usage                        |
 | 9   | `uptime`      | Show system load and uptime                 |
 
-### 1.5 **Regular Expressions**
+## 1.5 **Regular Expressions**
 
 This is a quick summary of regular expressions in Bash. For detailed explanations and examples, check the full guide [`Regular_Expressions.md`](#).
 
@@ -163,7 +163,7 @@ A step-by-step guide to Bash scripting, covering everything from the basics to a
 - `06_Loops_and_Iteration.md`: Looping constructs in Bash.
 - `07_Functions.md`: Creating and using functions in Bash.
 
-### 2.1 Introduction To Bash Scripts
+## 2.1 Introduction To Bash Scripts
 
 **Core Concepts**
 
@@ -189,7 +189,7 @@ A Bash script is a text file containing a sequence of shell commands for automat
 - Use descriptive filenames (e.g., `backup_photos.sh` instead of `script1.sh`)
 - Avoid spaces around equal signs in assignments (`name="John"`, not `name = "John"`)
 
-## Script Structure Example
+**Script Structure Example**
 
 ```bash
 #!/bin/bash
@@ -207,7 +207,7 @@ command2
 
 For detailed examples and practices, explore the full guide [`01_Introduction_Bash_Scripts.md`](#).
 
-### 2.2 Variables
+## 2.2 Variables
 
 Variables are placeholders for storing data in Bash scripts.
 
@@ -226,7 +226,7 @@ To capture user input, use `read`, optionally with prompts or timeouts. Combine 
 
 For detailed examples and practices, explore the full guide [`02_Variables.md`](#).
 
-### 2.3 Special Variables
+## 2.3 Special Variables
 
 **Special Variables Overview**
 
@@ -265,6 +265,95 @@ fi
 - Provide default values for optional parameters
 
 For detailed examples and practices, explore the full guide [`03_Special_variables.md`](#).
+
+## 2.4 Control Flow
+
+### 1. If Statements
+
+```bash
+if [ condition ]; then
+    # code
+elif [ condition ]; then
+    # code
+else
+    # code
+fi
+```
+
+### 2. Case Statements
+
+```bash
+case $variable in
+    pattern1) commands ;;
+    pattern2) commands ;;
+    *) default commands ;;
+esac
+```
+
+### Condition Types
+
+1. **Numeric Comparisons**
+
+   - `-eq` - Equal to
+   - `-ne` - Not equal
+   - `-gt` - Greater than
+   - `-lt` - Less than
+   - `-ge` - Greater than or equal
+   - `-le` - Less than or equal
+
+2. **String Tests**
+
+   - `=` - Equal to
+   - `!=` - Not equal to
+   - `-z` - Empty string
+   - `-n` - Non-empty string
+
+3. **File Tests**
+   - `-e` - Exists
+   - `-f` - Regular file
+   - `-d` - Directory
+   - `-r` - Readable
+   - `-w` - Writable
+   - `-x` - Executable
+
+For detailed examples and practices, explore the full guide [`04_Control_Flow.md`](#).
+
+## 2.5 Numbers and Strings
+
+### Arithmetic Operations
+
+1. **Using let**
+
+```bash
+let sum=5+3
+let product=4*3
+```
+
+1. **Using expr**
+
+```bash
+result=$(expr 10 + 5)
+product=$(expr 5 \* 3)
+```
+
+1. **Double Parentheses**
+
+```bash
+sum=$((5 + 3))
+power=$((2 ** 3))  # Exponentiation
+```
+
+### String Operations
+
+**Basic String Manipulation**
+
+- Length: `${#string}`
+- Concatenation: `full_name="$first $last"`
+- Substring: `${string:start:length}`
+- Uppercase: `${string^^}`
+- Lowercase: `${string,,}`
+
+For detailed examples and practices, explore the full guide [`05_Numbers_and_Strings.md`](#).
 
 ---
 
