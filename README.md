@@ -10,6 +10,8 @@ This guide serves as a solid starting point for anyone looking to understand Lin
 
 ![Project Cover, Bash and Linux Guide for Beginners](./cover.jpg)
 
+<a id="top"></a>
+
 ## 📚 Table of Contents
 
 1. [Linux Fundamentals](#1-linux-fundamentals)  
@@ -34,6 +36,8 @@ This guide serves as a solid starting point for anyone looking to understand Lin
    4.1. [Directory Organizer](#4-practical-scripts)\
    4.2. [System information](#4-practical-scripts)  
    4.3. [Todo List](#4-practical-scripts)
+5. [Acknowledgments]("#5-acknowledgments")
+6. [Contact]("#6-contact")
 
 ---
 
@@ -577,3 +581,20 @@ Some real-world examples of Bash scripts to reinforce learning and showcase prac
 - [`directory_organizer.sh`](https://github.com/heynzar/bash-and-linux-journey/blob/main/04_Practical_Scripts/directory_organizer.sh): Automatically organize files into directories based on their type.
 - [`system_info.sh.md`](https://github.com/heynzar/bash-and-linux-journey/blob/main/04_Practical_Scripts/system_info.sh): Display detailed system statistics at a glance.
 - [`todo.sh`](https://github.com/heynzar/bash-and-linux-journey/blob/main/04_Practical_Scripts/todo.sh): A simple script to manage your tasks from the terminal.
+
+## 5. Acknowledgments
+
+Special thanks to these YouTube channels for their exceptional knowledge and tutorials on Linux and Bash:
+
+- [Learn Linux TV](https://www.youtube.com/@LearnLinuxTV)
+- [Network Chuck](https://www.youtube.com/@NetworkChuck)
+
+Their content has been invaluable in the creation of this guide.
+
+## 6. Contact
+
+Nzar - [@heynzar](https://x.com/heynzar) - heynzar@gmail.com
+
+Project Link: [https://github.com/heynzar/bash-and-linux-journey](https://github.com/heynzar/bash-and-linux-journey)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
